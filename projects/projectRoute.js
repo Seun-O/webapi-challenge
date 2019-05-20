@@ -55,4 +55,13 @@ router.put("/:id", async (req, res) => {
   }
 });
 
+router.get("/:id/actions", async (req, res) => {
+  try {
+    const data = await db.getProjectActions(req.params.id);
+    res.status(200).json({ data });
+  } catch (err) {
+    res.status(500).json({ err, message: "Internal Server Error!" });
+  }
+});
+
 module.exports = router;

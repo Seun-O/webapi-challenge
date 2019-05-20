@@ -11,6 +11,6 @@ server.use(helmet());
 server.use(cors());
 
 server.use("/api/projects/", projects);
-server.use("/api/actions/", actions);
+server.use("/api/actions", actions);
 
 module.exports = server;
